@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Results</title>
+</head>
+<body>
+  <h1>Results</h1>
+
+  <pre id="output"></pre>
+
+  <a href="/logs">View Logs</a> |
+  <a href="/">Run Again</a>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem("results"));
+    document.getElementById("output").innerText =
+      JSON.stringify(data.echo_score, null, 2);
+  </script>
+</body>
+</html>

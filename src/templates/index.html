@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Echo Chamber Analyzer</title>
+</head>
+<body>
+  <h1>Echo Chamber Analyzer</h1>
+
+  <input id="seed" type="text" placeholder="YouTube video URL" size="60" />
+  <button onclick="run()">Analyze</button>
+
+  <p id="status"></p>
+
+  <script>
+    async function run() {
+      const seed = document.getElementById("seed").value;
+      document.getElementById("status").innerText = "Running analysis…";
+
+      const res = await fetch("/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ seed_video: seed })
+      });
+
+      const data = await res.json();
+      localStorage.setItem("results", JSON.stringify(data));
+      window.location.href = "/results";
+    }
+  </script>
+</body>
+</html>

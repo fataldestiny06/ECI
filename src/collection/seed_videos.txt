@@ -1,0 +1,4 @@
+neutral,https://www.youtube.com/watch?v=hKLsdlB-VVU
+left,https://www.youtube.com/watch?v=oDCUUDTaHFQ
+right,https://www.youtube.com/watch?v=J-zn8PdvZOU
+conspiracy,https://www.youtube.com/watch?v=2xzIc-sY-cA

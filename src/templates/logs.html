@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logs</title>
+</head>
+<body>
+  <h1>Traversal Logs</h1>
+  <ul id="logs"></ul>
+
+  <a href="/results">Back to Results</a>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem("results"));
+    const ul = document.getElementById("logs");
+
+    data.logs.forEach(row => {
+      const li = document.createElement("li");
+      li.innerText = `${row.step}: ${row.title}`;
+      ul.appendChild(li);
+    });
+  </script>
+</body>
+</html>
